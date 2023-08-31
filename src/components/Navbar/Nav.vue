@@ -12,6 +12,7 @@
 
 <script>
 export default {
+    data() { },
     methods: {
         changeActiveTab(tab) {
             this.activeTab = tab
