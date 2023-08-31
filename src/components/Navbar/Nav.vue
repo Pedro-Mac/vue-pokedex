@@ -22,5 +22,3 @@ export default {
     props: ['navTabs', 'activeTab']
 }
 </script>
-
-<style></style>
