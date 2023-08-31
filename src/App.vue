@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import NavBar from './components/NavBar/index.vue';
+import NavBar from './components/NavBar/NavBar.vue';
 import PokemonList from './views/PokemonList.vue';
 
 export default {
