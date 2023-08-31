@@ -1,4 +1,46 @@
-<script setup>
+<template>
+  <NavBar />
+  <p >{{ pages[0].pageTitle }}</p>
+
+
+</template>
+<script>
+import NavBar from './components/NavBar.vue';
+
+export default {
+  data() {
+    return {
+      activePage: 0,
+      isDarkMode: true,
+      pages: [
+        {
+          link: { text: 'Home', url: 'index.html' },
+          pageTitle: 'Home page',
+          content: 'This is the home content',
+        },
+        {
+          link: { text: 'About', url: 'about.html' },
+          pageTitle: 'About page',
+          content: 'This is the about content',
+        },
+        {
+          link: { text: 'contact', url: 'contact.html' },
+          pageTitle: 'contact page',
+          content: 'This is the contact content',
+        },
+      ],
+    }
+  },
+
+  components: {
+    NavBar
+
+    
+  },
+}
+</script>
+
+<!-- <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 </script>
@@ -82,4 +124,4 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
-</style>
+</style> -->
