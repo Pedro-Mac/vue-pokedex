@@ -4,7 +4,7 @@
             <li v-for="(tab, index) in navTabs" :key="tab.name"
                 :class="['capitalize', 'text-lg', 'text-slate-100', 'hover:bg-red-600', 'cursor-pointer', 'p-2', 'rounded-md', index === activeTab && 'bg-red-600']"
                 @click="changeActiveTab(index)">
-                {{ tab.name }}
+                <span>{{ index + 1 }}. {{ tab.name }}</span>
             </li>
         </ul>
     </nav>
@@ -14,11 +14,9 @@
 export default {
     data() { },
     methods: {
-        changeActiveTab(tab) {
-            this.activeTab = tab
-        },
+
     },
 
-    props: ['navTabs', 'activeTab']
+    props: ['navTabs', 'activeTab', 'changeActiveTab']
 }
 </script>
