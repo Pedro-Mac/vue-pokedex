@@ -2,7 +2,8 @@
   <div class="h-screen flex overflow-scroll ">
     <NavBar :nav-tabs="navTabs" :active-tab="activeTab" :change-active-tab="changeActiveTab" />
     <main class="flex-1 overflow-scroll">
-      <SinglePokemon :is-loading="isLoading" />
+      <SinglePokemon :is-loading="isLoading" :active-pokemon="navTabs[activeTab]"
+        :update-loading-state="updateLoadingState" />
     </main>
   </div>
 </template>
@@ -43,8 +44,13 @@ export default {
     },
 
     changeActiveTab(tab) {
+      this.isLoading = true
       this.activeTab = tab
     },
+
+    updateLoadingState(val) {
+      this.isLoading = val
+    }
   },
 
   computed: {
