@@ -1,21 +1,28 @@
 <template>
-    <div>
-        <ul>
-            <li v-for="pokemon in pokemons" :key="pokemon.name" class="box-border p-3 capitalize">
-                <span>{{ pokemon.name }}</span>
-            </li>
-        </ul>
+    <div :class="getLoadingStyles">
+        <LoadingSpinner v-if="isLoading" />
     </div>
 </template>
 
 <script>
+import LoadingSpinner from '../components/AppLoadingSpinner.vue';
 export default {
-    data() {
-        return {
-            pokemons: [],
-        }
+
+    props: ['isLoading'],
+    computed: {
+        getLoadingStyles() {
+            console.log("this.isLoading", this.isLoading);
+            return {
+                'flex': this.isLoading,
+                'justify-center': this.isLoading,
+                'items-center': this.isLoading,
+                'min-h-full': true
+            }
+        },
     },
 
-
+    components: {
+        LoadingSpinner
+    }
 }
 </script>
