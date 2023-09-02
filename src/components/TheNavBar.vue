@@ -1,17 +1,19 @@
 <template>
     <nav class="h-full flex flex-col gap-4 bg-red-700 max-w-sm box-border p-8 min-w-240 overflow-scroll">
         <ul class="flex flex-col gap-3">
-            <li v-for="(tab, index) in navTabs" :key="tab.name"
-                :class="['capitalize', 'text-lg', 'text-slate-100', 'hover:bg-red-600', 'cursor-pointer', 'p-2', 'rounded-md', index === activeTab && 'bg-red-600']"
-                @click="changeActiveTab(index)">
-                <span>{{ index + 1 }}. {{ tab.name }}</span>
-            </li>
+            <TheNavbarItem v-for="(tab, index) in navTabs" :key="tab.name" :is-active-tab="index === activeTab"
+                :change-active-tab="changeActiveTab" :tab="tab" :placement="index + 1" />
         </ul>
     </nav>
 </template>
 
 <script>
+import TheNavbarItem from './TheNavbarItem.vue'
+
 export default {
-    props: ['navTabs', 'activeTab', 'changeActiveTab']
+    props: ['navTabs', 'activeTab', 'changeActiveTab'],
+    components: {
+        TheNavbarItem
+    }
 }
 </script>
