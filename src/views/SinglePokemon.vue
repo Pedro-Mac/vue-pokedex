@@ -1,9 +1,12 @@
 <template>
     <div :class="getLoadingStyles">
         <LoadingSpinner v-if="isLoading" />
-        <div v-else-if="this.pokemon">{{ this.pokemon.name }}</div>
-
-
+        <div v-else-if="pokemon">
+            <p>
+                {{ pokemon.name }}
+            </p>
+            <img :src="pokemon.sprites.front_default" />
+        </div>
     </div>
 </template>
 
