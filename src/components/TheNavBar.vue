@@ -12,13 +12,6 @@
 
 <script>
 export default {
-    data() {
-        return {}
-    },
-    methods: {
-
-    },
-
     props: ['navTabs', 'activeTab', 'changeActiveTab']
 }
 </script>
