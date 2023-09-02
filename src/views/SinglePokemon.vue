@@ -1,10 +1,10 @@
 <template>
-    <div :class="getLoadingStyles">
+    <div :class="{ ...getLoadingStyles, 'min-h-full': true }">
         <LoadingSpinner v-if="isLoading" />
         <div v-else-if="pokemon">
-            <p>
+            <h1 class="capitalize text-3xl">
                 {{ pokemon.name }}
-            </p>
+            </h1>
             <img :src="pokemon.sprites.front_default" />
         </div>
     </div>
@@ -26,7 +26,7 @@ export default {
                 'flex': this.isLoading,
                 'justify-center': this.isLoading,
                 'items-center': this.isLoading,
-                'min-h-full': true
+
             }
         },
     },

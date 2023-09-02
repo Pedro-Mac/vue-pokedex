@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen flex overflow-scroll ">
     <NavBar :nav-tabs="navTabs" :active-tab="activeTab" :change-active-tab="changeActiveTab" />
-    <main class="flex-1 overflow-scroll">
+    <main class="flex-1 overflow-scroll p-8">
       <SinglePokemon :is-loading="isLoading" :active-pokemon="navTabs[activeTab]"
         :update-loading-state="updateLoadingState" />
     </main>
